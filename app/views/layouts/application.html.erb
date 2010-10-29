@@ -36,12 +36,12 @@
   				<%if root_domain%>
   					<%= link_to 'Home', root_path %>
   				<% else%>
-  					<%= link_to 'Dashboard', '/' %>|
-  					<%= link_to 'Users', users_path %>|
+  					<%= link_to 'Dashboard', '/' %>
+  					<%= link_to 'Users', users_path %>
   				<% end%>
   				<% if can? :manage, User %>
-  			    <%= link_to "Invite User", new_user_invitation_path %>|
-						<%= link_to 'Settings'  %>
+  			    <%= link_to 'Invite User', new_user_invitation_path %>
+						<%= link_to 'Settings', settings_path  %>
   			  <% end %>
 
   			</div>
