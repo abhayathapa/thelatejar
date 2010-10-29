@@ -1,0 +1,22 @@
+<h1>Settings</h1>
+<%= form_for @account, :url => setting_path(@account) do |f| %>
+  <div>
+	<%= f.label :time_zone, "Time Zone" %><br />
+	<%= f.time_zone_select( :time_zone, ::ActiveSupport::TimeZone.us_zones, :default => "UTC") %>
+	</div>  
+	<div>
+	<%= f.label :late_after, "Late After" %><br />
+	<%= f.text_field :late_after %>
+	</div>	
+	<div>
+		<%= f.label :fine_amount, "Fine Amount"%><br />
+		<%= f.text_field :fine_amount %>
+	</div>	
+	<div>
+		<%= f.label :office_closing_days,  "Office Closing Days" %><br />
+		<%= f.text_field :office_closing_days %>
+	</div>
+	<div>
+		<%= f.submit "Change" %>
+	</div>
+<% end %>
