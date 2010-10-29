@@ -9,10 +9,10 @@ TheLateJar::Application.routes.draw do
       get :valid
     end
   end
-  resources :accounts, :only => [:index, :show] do
-    resource :setting, :only => [:edit, :update]
-  end
+  resources :accounts, :only => [:index, :show] 
   
+  resources :settings, :only => [:index, :update ]
+   
   constraints(AccountRoute) do
     match '/' => 'dashboard#index'
     match '/opps' => 'sites#opps'
