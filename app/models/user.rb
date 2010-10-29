@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :account
+  has_many :jars
   
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
