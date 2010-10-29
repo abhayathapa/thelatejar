@@ -10,7 +10,7 @@ table { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inhe
 
 a img { border: none; }
 
-body {background:#ddd;}
+body {background:#ddd; font: 13px/1.48em Arial;}
 p { margin-bottom:.5em;}
 
 h1 { font-size: 1.5em; margin-bottom:.5em; font-weight:bold; }
