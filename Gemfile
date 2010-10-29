@@ -10,7 +10,7 @@ gem 'will_paginate', '>=3.0.pre2'
 gem 'attribute_normalizer'
 gem 'validates_timeliness', '>= 3.0.0.beta'
 
-gem "pg", :group => :production
+gem "mysql", :group => :production
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
