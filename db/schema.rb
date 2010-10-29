@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101029052209) do
+ActiveRecord::Schema.define(:version => 20101029071940) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20101029052209) do
   end
 
   add_index "accounts", ["name"], :name => "index_accounts_on_name"
+
+  create_table "jars", :force => true do |t|
+    t.integer  "user_id"
+    t.float    "fine_amount"
+    t.datetime "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
