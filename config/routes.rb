@@ -9,12 +9,12 @@ DeviseBCSDCanInvite::Application.routes.draw do
       get :valid
     end
   end
-  resources :accounts, :only => [:index, :show]
-  
-  resources :dashboard, :only => [:index]
+  resources :accounts, :only => [:index, :show] do
+    resource :setting, :only => [:edit, :update]
+  end
   
   constraints(AccountRoute) do
-    match '/' => 'sites#index'
+    match '/' => 'dashboard#index'
     match '/opps' => 'sites#opps'
   end
   
