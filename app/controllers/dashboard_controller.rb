@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
-  before_filter :check_account
   before_filter :require_user
+  before_filter :check_account
   
   def index
       Time.zone = current_account.time_zone

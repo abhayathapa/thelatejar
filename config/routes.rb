@@ -11,7 +11,9 @@ TheLateJar::Application.routes.draw do
   end
   resources :accounts, :only => [:index, :show] 
   
-  resources :settings, :only => [:index, :update ]
+  resources :settings, :only => [:index, :update]
+  
+  resources :jars
    
   constraints(AccountRoute) do
     match '/' => 'dashboard#index'
