@@ -10,6 +10,9 @@ DeviseBCSDCanInvite::Application.routes.draw do
     end
   end
   resources :accounts, :only => [:index, :show]
+  
+  resources :dashboard, :only => [:index]
+  
   constraints(AccountRoute) do
     match '/' => 'sites#index'
     match '/opps' => 'sites#opps'
