@@ -1,4 +1,4 @@
-DeviseBCSDCanInvite::Application.routes.draw do
+TheLateJar::Application.routes.draw do
   resources :members
 
   resources :roles

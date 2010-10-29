@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-DeviseBCSDCanInvite::Application.load_tasks
+TheLateJar::Application.load_tasks
