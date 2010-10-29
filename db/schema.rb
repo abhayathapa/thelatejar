@@ -10,13 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101027200254) do
+ActiveRecord::Schema.define(:version => 20101029052209) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "time_zone"
+    t.string   "ip_range"
+    t.string   "office_closing_days"
+    t.float    "fine_amount"
+    t.integer  "late_after"
   end
 
   add_index "accounts", ["name"], :name => "index_accounts_on_name"
