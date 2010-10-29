@@ -4,29 +4,26 @@ if !root_domain
 else%>
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
     <% if current_account %>
       <%= f.hidden_field :account_name, :value => current_account.name %>
     <% else%>
-      <p><%= f.label :account %>
-      <br /><%= f.text_field :account_name%></p>
+      <%= f.input :account_name, :label => "http://", :hint => ".thelatejar.com"%>
     <% end %>
 
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name %></p>
+<hr />
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+<h3>Account Holder</h3>
+  <%= f.input :name %>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+  <%= f.input :email %>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+  <%= f.input :password %>
 
-  <p><%= f.submit "Sign up" %></p>
+  <%= f.input :password_confirmation %>
+
+  <%= f.button :submit, :label => "Create Jar" %>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
