@@ -4,8 +4,7 @@ class SettingsController < ApplicationController
   before_filter :require_user
   
   def index
-      @account = Account.last
-      #@account = Account.find(current_account)
+      @account = Account.find(current_account)
   end
   
   def update
