@@ -3,7 +3,7 @@ class CreateJars < ActiveRecord::Migration
     create_table :jars do |t|
       t.integer :user_id
       t.float "fine_amount"
-      t.timestamps "end_date", :default => :null
+      t.datetime "end_date", :default => :null
       t.timestamps
     end
   end

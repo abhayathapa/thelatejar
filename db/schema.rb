@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20101029071940) do
   create_table "jars", :force => true do |t|
     t.integer  "user_id"
     t.float    "fine_amount"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
