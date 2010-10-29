@@ -1,0 +1,15 @@
+<div>
+	<div><%= @current_time.strftime('%H:%M:%S %p') %></div>
+	<div><%= @raised_amount %> raised </div>
+	<div>
+			<div><%= link_to "U are late" %></div>
+			
+			<div>Todays Contributors</div>
+			<%= render :partial => "contributors", :collection => @today_contributors, :as => :contributors %>
+			<div>Top Contributors</div>
+			<%= render :partial => "contributors", :collection => @top_contributors, :as => :contributors %>
+	</div>
+</div>
+
+
+
