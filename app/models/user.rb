@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates_presence_of :name
+  validates_presence_of :name, :password_confirmation
   validates_presence_of :account_name, :on => :create, :message => "Account name must be unique and not blank" 
   validates_uniqueness_of  :email, :case_sensitive => false
   attr_accessor :account_name  # used to create a account
