@@ -1,3 +1,30 @@
-<h1>Rails3-Account-Devise</h1>
-<p><%= link_to "View List of all Users", users_path %></p>
-<p><%= link_to "View List of accounts", accounts_path %></p>
+<h2>Sign up</h2>
+
+<%= form_tag user_registration_path do %>
+	<p><% if current_account %>
+		<%= f.hidden_field_tag :account_name, :value => current_account.name %>
+	<% else%>
+	    http://<%= text_field_tag 'user[account_name]' %>.thelatejar.com</p>
+	<% end %></p>
+
+	<hr />
+
+	<h3>Account Holder</h3>
+	
+	<p><%= label_tag 'user[name]', 'Name' %>
+	<%= text_field_tag 'user[name]' %></p>
+	
+	<p><%= label_tag 'user[email]', 'Email' %>
+	<%= text_field_tag 'user[email]' %></p>
+	
+	<p><%= label_tag 'user[password]', 'Password' %>
+	<%= password_field_tag 'user[password]' %></p>
+	
+	<p><%= label_tag 'user[password_confirmation]', 'Password confirmation' %>
+	<%= password_field_tag 'user[password_confirmation]' %></p>
+	
+	<%= submit_tag 'Create Jar' %>
+<% end %>
+
+<p><%#= link_to "View List of all Users", users_path %></p>
+<p><%#= link_to "View List of accounts", accounts_path %></p>
