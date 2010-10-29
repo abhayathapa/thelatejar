@@ -36,7 +36,7 @@
   				<%if root_domain%>
   					<%= link_to 'Home', root_path %>
   				<% else%>
-  					<%= link_to 'Dashboard', dashboard_index_path %>|
+  					<%= link_to 'Dashboard', '/' %>|
   					<%= link_to 'Users', users_path %>|
   				<% end%>
   				<% if can? :manage, User %>
