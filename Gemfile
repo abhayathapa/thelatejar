@@ -5,6 +5,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise',           '~> 1.1.3'
 gem 'devise_invitable', '~> 0.3.4'
 gem 'cancan'
+gem 'simple_form'
 
 gem 'will_paginate', '>=3.0.pre2'
 gem 'attribute_normalizer'
