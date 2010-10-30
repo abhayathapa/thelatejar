@@ -18,11 +18,12 @@ TheLateJar::Application.routes.draw do
       get :reset_contrib
     end
   end
-   
+  
+  match '/about' => 'home#about'
+  
   constraints(AccountRoute) do
     match '/' => 'dashboard#index'
     match '/opps' => 'sites#opps'
-
   end
   
   root :to => "home#index"
