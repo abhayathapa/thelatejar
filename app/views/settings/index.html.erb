@@ -13,9 +13,14 @@
 		<%= f.text_field :fine_amount %>
 	</div>	
 	<div>
-		<%= f.label :office_closing_days,  "Office Closing Days" %><br />
-		<%= f.text_field :office_closing_days %>
+		<%= f.label "Office Closing Days" %><br />
+			<% @days.each do |day| -%>
+			<%= check_box_tag "office_closing_days[]",day[0], @account.office_closing_days.include?(day[0]) %>
+			 <%= day[1] %>
+			<% end %>		
 	</div>
+	
+	
 	<div>
 		<%= f.submit "Change" %>
 	</div>
