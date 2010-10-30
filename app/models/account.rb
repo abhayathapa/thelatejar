@@ -24,6 +24,5 @@ class Account < ActiveRecord::Base
      self.time_zone = 'Kathmandu'
      self.office_closing_days = "6,7"
      self.fine_amount = 15.0
-     self.late_after = 0
    end
 end

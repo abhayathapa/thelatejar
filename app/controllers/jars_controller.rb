@@ -35,6 +35,6 @@ class JarsController < ApplicationController
 
   private
   def return_jars
-    @jars = current_account.users.map{|user| user.jars.where("end_date is null AND fine_amount is not null")}.flatten
+    @jars = current_account.users.map{|user| user.jars.where("end_date is null")}.flatten
   end
 end

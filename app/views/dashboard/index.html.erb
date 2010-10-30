@@ -1,14 +1,29 @@
 <div>
 	<div><%= @current_time.strftime('%H:%M:%S %p') %></div>
-	<div><%= @raised_amount %> raised </div>
+	<div><%= @total_amount %> raised </div>
 	<div><%= @msg if @msg %></div>
 	<div>
-			<div><%= link_to "U are late" %></div>
-			
-			<div>Todays Contributors</div>
-			<%= render :partial => "contributors", :collection => @today_contributors, :as => :contributors %>
-			<div>Top Contributors</div>
-			<%= render :partial => "contributors", :collection => @top_contributors, :as => :contributors %>
+			<div>
+				<% if @late %> 
+					<%= link_to "U are late" %>
+				<% else %>
+					<%= link_to "U are on time" %>
+				<% end %>
+			</div>
+			<div>Todays Contributors
+				<ul>
+					<% @today_contributors.each do |user| %>
+					<li><%= user.name %></li>
+					<% end %>
+				</ul>
+			</div>
+			<div>Top Contributors
+				<ul>
+					<% @top_contributors.each do |u| %>
+					<li><%= u[1] %></li>
+					<% end %>
+				</ul>
+			</div>
 	</div>
 </div>
 

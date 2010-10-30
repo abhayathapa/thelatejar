@@ -9,9 +9,7 @@ class SettingsController < ApplicationController
   end
   
   def update
-
     off_days = params[:office_closing_days]
-    
     @account = Account.find(params[:id])
     @account.office_closing_days = off_days if ! off_days.nil?
 
@@ -22,4 +20,5 @@ class SettingsController < ApplicationController
     end
   end
   
+
 end
