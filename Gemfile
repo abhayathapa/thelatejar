@@ -9,6 +9,8 @@ gem 'simple_form'
 gem 'will_paginate', '>=3.0.pre2'
 gem 'attribute_normalizer'
 gem 'validates_timeliness', '>= 3.0.0.beta'
+gem 'compass'
+gem 'compass-960-plugin'
 
 gem "mysql", :group => :production
 
@@ -19,8 +21,6 @@ group :development do
   end
 	gem 'jquery-rails'
   gem 'rspec-rails', '>=2.0.0.beta.11'
-  gem 'compass'
-  gem 'compass-960-plugin'
 end
 
 group :console do
