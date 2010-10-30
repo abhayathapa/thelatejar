@@ -23,16 +23,18 @@
 </head>
 
 <body>
-
+<div id="wrapper">
   <div id="container">
+	<div id="banner">
+		<div class="logo"></div>
+		<div id="menu">
+			<%= render 'devise/menu/registration_items' %>
+    		<%= render 'devise/menu/login_items' %>
+		</div>
+	</div>
     <header>
-			<ul class="hmenu">
-	    <%= render 'devise/menu/registration_items' %>
-	    <%= render 'devise/menu/login_items' %>
-			</ul>
-			
   		<div id="menubar">
-  			<div>
+  			<div class="subMenu">
   				<%if root_domain%>
   					<%= link_to 'Home', root_path %>
   				<% else%>
@@ -71,6 +73,7 @@
     <%= javascript_include_tag 'dd_belatedpng' %>
     <script> DD_belatedPNG.fix('img, .png_bg'); </script>
   <![endif]-->
+</div>
 
 </body>
 </html>

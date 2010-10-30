@@ -1,30 +1,31 @@
-<h2>Sign up</h2>
+<div class="late"></div>
+<div id="contentPart">
+<div class="sign">Sign up</div>
 
 <%= form_tag user_registration_path do %>
 	<p><% if current_account %>
 		<%= f.hidden_field_tag :account_name, :value => current_account.name %>
 	<% else%>
-	    http://<%= text_field_tag 'user[account_name]' %>.thelatejar.com</p>
+	    <span class="left txtHolder">http://</span>
+		<span><%= text_field_tag 'user[account_name]',{}, :class=>"txtBox" %>.thelatejar.com</span>
+	</p>
 	<% end %></p>
 
-	<hr />
-
 	<h3>Account Holder</h3>
-	
-	<p><%= label_tag 'user[name]', 'Name' %>
-	<%= text_field_tag 'user[name]' %></p>
-	
-	<p><%= label_tag 'user[email]', 'Email' %>
-	<%= text_field_tag 'user[email]' %></p>
-	
-	<p><%= label_tag 'user[password]', 'Password' %>
-	<%= password_field_tag 'user[password]' %></p>
-	
-	<p><%= label_tag 'user[password_confirmation]', 'Password confirmation' %>
-	<%= password_field_tag 'user[password_confirmation]' %></p>
-	
-	<%= submit_tag "Create Account" %>
+		<span class="txtHolder"><%= label_tag 'user[name]', 'Name:' %></span>
+		<span><%= text_field_tag 'user[name]',{}, :class=>"txtBox" %></span>
+		<br/>
+		<span class="left txtHolder"><%= label_tag 'user[email]', 'Email:' %></span>
+		<span><%= text_field_tag 'user[email]',{}, :class=>"txtBox" %></span>
+		<br/>
+		<span class="left txtHolder"><%= label_tag 'user[password]', 'Password:' %></span>
+		<span><%= password_field_tag 'user[password]',{}, :class=>"txtBox" %></span>
+		<br/>
+		<span class="left txtHolder"><%= label_tag 'user[password_confirmation]', 'Password confirmation:' %></span>
+		<span><%= password_field_tag 'user[password_confirmation]',{}, :class=>"txtBox" %></span>
+		<div class="space"></div>
+		<span class="left txtHolder">&nbsp;</span>
+		<span><%= submit_tag "Create Account", :class=>"create" %></span>
 <% end %>
 
-<p><%#= link_to "View List of all Users", users_path %></p>
-<p><%#= link_to "View List of accounts", accounts_path %></p>
+</div>
