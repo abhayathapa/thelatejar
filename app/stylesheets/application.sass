@@ -1,69 +1,129 @@
+@import "compass"
+@import "compass/css3"
+@import "960/grid"
+@import "text"
+
+$ninesixty-gutter-width: 10px
+$ninesixty-grid-width: 960px
+$ninesixty-columns: 16
+
+$font-color:         #2a2a2a
+$link-color:         #0388a6
+$link-hover-color:   #009ce0
+$link-focus-color:   $link-color
+$link-active-color:  $link-color
+$link-visited-color: $link-color
+
++text
++font-face("Museo 300", font-files("/fonts/Museo300-Regular.otf", opentype))
++font-face("Museo 500", font-files("/fonts/Museo500-Regular.otf", opentype))
++font-face("Museo 700", font-files("/fonts/Museo700-Regular.otf", opentype))
+
+a
+  +link-colors($link-color, $link-hover-color, $link-focus-color, $link-active-color, $link-visited-color)
+
 body
-  background-image: url(../../images/bg.jpg)
-  background-color: #0d253f
-  background-repeat: no-repeat
+  font-family: "Museo 300"
+  +text-shadow(rgba(0,0,0,0.2), 1px, 1px, 0px)
+  background:
+    image: url(../../images/bg.jpg)
+    color: #0d253f
+    repeat: no-repeat
 
 #wrapper
-  width: 960px
-  margin: 0 auto
+  +grid-container
+  +clearfix
 
-.logo
-  width: 420px
-  height: 155px
-  background-image: url(../../images/logo.png)
-  float: left
+header
+  +clearfix
+  +grid-container
+  #banner
+    clear: both
+    height: 200px
+    #logo
+      +grid(12)
+      +alpha
+      a
+        display: block
+        height: 155px
+        width: 420px
+        +replace-text('logo.png', 0px, 0px)
+        //background-image: url(../../images/logo.png)
 
-#banner
-  clear: both
-  height: 200px
-  display: block
+    #menu
+      +grid(4)
+      +omega
+      background: url(../../images/menu.png)
+      color: #FEFEFE
+      font-size: 1.2em
+      height: 44px
+      //padding-left: 8px
+      //padding-right: 8px
+      padding-top: 25px
+      text-align: center
+      text-transform: uppercase
+      float: right
+      +border-radius(10px 10px 0px 0px)
+      margin-top: 20px
+      ul
+        margin: 0px
+        padding: 0px
+        //background-color: #aaa
+        +horizontal-list-container
+        margin-left: 23px
+        li
+          +horizontal-list-item
+          a
+            display: block
+            padding-left: 15px
+            font-family: "Museo 700"
+            color: #fff
+            text-decoration: none
+            &:hover
+              color: #ed253f
+              text-decoration: underline
 
-#menu
-  width: 650
-  background: url(../../images/menu.png)
-  color: #FEFEFE
-  display: block
-  font-family: "georgia"
-  font-size: 19px
-  height: 44px
-  padding-left: 8px
-  padding-right: 8px
-  padding-top: 25px
-  text-align: center
-  text-transform: uppercase
-  float: right
-  -moz-border-radius: 10px 10px 0px 0px
-  margin-top: 20px
-  li
-    float: left
-    list-style: none
-    margin: 0px 5px
-    a
-      color: #ffffff
-      text-decoration: none
-      &:hover
-        text-decoration: underline
-
+#main
+  +grid-container
+  +clearfix
+  
+footer
+  margin-top: 15px
+  border-top: 3px #aaa solid
+  +clearfix
+  #footer_content
+    +grid-container
+    height: 80px
+    margin-top: 15px
+    text-align: center
+    color: #ccc
+    font-family: "Museo 500"
+  
 #contentPart
-  width: 560px
+  +grid(8)
+  +alpha
   display: block
   overflow: hidden
   display: block
   float: right
   background: #FFFFFF
-  -moz-border-radius: 20px 0px 20px 0px
+  +border-radius(10px)
   padding: 20px
   z-index: 1000
-
+  .sign
+    font:
+      family: "Museo 700"
+      size: 2em
+    +text-shadow(rgba(0,0,0,0.5), 1px, 1px, 0px)
 .late
-  width: 450px
+  +grid(8)
+  +omega
   height: 355px
   background-image: url(../../images/final-late.png)
   position: absolute
-  margin-left: -100px
+  margin-left: -27px
   &:hover
     background-image: url(../../images/final-late2.png)
-    cursor: pointer
 
 /************* Form***************************/
 
@@ -73,9 +133,9 @@ body
   background-image: url(../../images/txt.jpg)
   background-repeat: repeat-x
   border: 1px solid #999999
-  -moz-border-radius: 5px
-  font-family: arial
-  font-size: 16px
+  +border-radius(5px)
+  font-family: "Museo 300", arial
+  font-size: 1em
   &:hover
     border-color: #333333
 
@@ -89,13 +149,14 @@ body
   background-color: #0a8acc
   padding: 10px 10px 10px 25px
   border: #0ea3f0 1px solid
-  -moz-border-radius: 5px
-  color: #ffffff
+  +border-radius(6px)
+  color: #fff
   background-image: url(../../images/create.png)
   background-repeat: no-repeat
   background-position: 0.3em
   &:hover
     background-color: #044d73
+    cursor: pointer
 
 .space
   height: 15px
