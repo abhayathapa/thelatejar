@@ -1,0 +1,22 @@
+<h1>Jars</h1>
+
+<%= link_to  'Reset Contributions', reset_contrib_jars_path %>
+
+<table>
+	<tr>
+		<td>Late Employee Name</td>
+		<td>Contributions Last <%= @last_days %> </td>
+	</tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user %></td>
+	<td>
+		<%= user.jars.where(:end_date => nil).sum(:fine_amount) %>
+	</td>
+  </tr>
+<% end %>
+</table>
+<%= @users.count %> Users
+Total Amount <%= @total_amount %>
+
+<p><%#= link_to "View List of all Users", users_path %></p>
