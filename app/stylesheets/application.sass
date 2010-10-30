@@ -82,14 +82,73 @@ header
             &:hover
               color: #ed253f
               text-decoration: underline
+nav#menubar
+  +clearfix
+  padding: 10px 0px
+  background-color: #eee
+  +border-radius(5px)
+  ul.subMenu
+    +grid(10)
+    +horizontal-list-container
+    margin-left: 0px
+    li
+      +horizontal-list-item
+      a
+        display: block
+        text-decoration: none
+        font:
+          family: "Museo 500",Helvetica,Arial,sans-serif
+          size: 1.4em
+        padding: 6px
+        +border-radius(5px)
+        background-color: #000
+        margin-left: 13px
+        &:hover
+          text-decoration: underline
+  .right_submenu
+    +grid(6)
+    ul
+      +horizontal-list-container
+      float: right
+      li
+        +horizontal-list-item
+        display: block
+        font:
+          family: "Museo 300",Helvetica,Arial,sans-serif
+          size: 1.2em
+        padding: 6px
+        +border-radius(5px)
+        background-color: #000
+        margin-left: 13px
+        color: #fff
 
 #main
   +grid-container
   +clearfix
+  //margin-top: 10px
+  #content
+    background-color: #eee
+    +border-radius(5px)
+    //padding: 10px
+    font-size: 1.1em
+
+.application #main
+  margin-top: 10px
+  #content
+    padding: 10px
+    
+    a.ontime_button
+      display: block
+      +border-radius(100px)
+      padding: 10px
+      font-size: 5em
+      letter-spacing: -3px
+      font-family: "Museo 700"
+      text-decoration: none
+    a.late_button
   
 footer
   margin-top: 15px
-  border-top: 3px #aaa solid
   +clearfix
   #footer_content
     +grid-container
@@ -98,7 +157,15 @@ footer
     text-align: center
     color: #ccc
     font-family: "Museo 500"
-  
+    background-image: url("../../images/footer.png")
+    background-repeat: repeat-x
+    height: 35px
+    padding-top: 15px
+    color: #ffffff
+    text-align: center
+    +border-radius(10px)
+    border: 1px solid #eee
+
 #contentPart
   +grid(8)
   +alpha

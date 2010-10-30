@@ -21,8 +21,12 @@
   <%= csrf_meta_tag %>
 
 </head>
-
-<body>
+<% 
+  if user_signed_in? 
+    @body_class = "application"
+  end
+  %>
+<body<%= " class='application'" if @body_class%>>
 <div id="wrapper">
   <header>
   	<div id="banner">
@@ -38,18 +42,32 @@
 
   <% if user_signed_in? %>
   <nav id="menubar">
-    <div class="subMenu">			
-      <%= link_to 'Dashboard', '/' %>
-      <%= link_to 'Users', users_path %>
-      <%= link_to 'Jars', jars_path %>
+    <ul class="subMenu">			
+      <li><%= link_to 'Dashboard', '/' %></li>
+      <li><%= link_to 'Users', users_path %></li>
+      <li><%= link_to 'Jars', jars_path %></li>
+    <% if can? :manage, User %>  
+      <li><%= link_to 'Invite User', new_user_invitation_path %></li>
+      <li><%= link_to 'Settings', settings_path  %></li>
+    <% end %>
+    </ul>
+    
+    
+    <div class="right_submenu">
+      <ul>
+      <% if !current_account.nil?%>
+        <li>
+            User: 
+            <% if current_user %>
+              <%= current_user.name %>
+            <% else %>
+              (not logged in)
+            <% end %>
+        </li>
+      <% end %>
+      </ul>
     </div>
 
-    <% if can? :manage, User %>
-    <div class="right_submenu">
-      <%= link_to 'Invite User', new_user_invitation_path %>
-      <%= link_to 'Settings', settings_path  %>
-    </div>
-    <% end %>
   </nav>
   <% end %>
   <div id="main">
@@ -61,7 +79,7 @@
   </div>
 </div> <!-- end of #wrapper -->
 <footer>
-  <div id="footer_content">&copy; Copyright 2010, Sprout Inc.</div>
+  <div id="footer_content">&copy; Copyright 2010, Sprout Technology International Limited</div>
 </footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>

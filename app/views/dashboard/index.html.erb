@@ -5,9 +5,9 @@
 	<div>
 			<div>
 				<% if @late %> 
-					<%= link_to "U are late" %>
+					<%= link_to "U are late", {}, :class => "late_button" %>
 				<% else %>
-					<%= link_to "U are on time" %>
+					<%= link_to "U are on time", {}, :class => "ontime_button" %>
 				<% end %>
 			</div>
 			<div>Todays Contributors
