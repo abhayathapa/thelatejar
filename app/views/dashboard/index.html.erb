@@ -1,6 +1,7 @@
 <div>
 	<div><%= @current_time.strftime('%H:%M:%S %p') %></div>
 	<div><%= @raised_amount %> raised </div>
+	<div><%= @msg if @msg %></div>
 	<div>
 			<div><%= link_to "U are late" %></div>
 			

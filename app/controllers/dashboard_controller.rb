@@ -9,8 +9,8 @@ class DashboardController < ApplicationController
       @today_contributors = []
       @top_contributors = []
       
-      if current_user.roles && current_user.roles.include?("site_admin") && current_user.sign_in_count == 2 && current_account.users.count == 1
-        redirect_to settings_path
+      if current_user.roles && current_user.roles.include?("site_admin") && current_user.sign_in_count <= 2 && current_account.users.count == 1
+        @msg= "Please change your settings."
       end
   end
   
