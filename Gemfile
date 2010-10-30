@@ -19,6 +19,8 @@ group :development do
   end
 	gem 'jquery-rails'
   gem 'rspec-rails', '>=2.0.0.beta.11'
+  gem 'compass'
+  gem 'compass-960-plugin'
 end
 
 group :console do
