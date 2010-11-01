@@ -13,7 +13,7 @@ set :user, 'deploy'
 set :runner, 'deploy'
 set :branch, 'master'
 set :use_sudo, false
- 
+set :ssh_options, {:forward_agent => true}
 puts "*** Updating cached repository and copying over to new release"
 set :scm_username, 'sprout-deploy'
 
