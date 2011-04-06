@@ -8,19 +8,22 @@ gem 'simple_form'
 
 gem 'will_paginate', '>=3.0.pre2'
 gem 'attribute_normalizer'
-gem 'validates_timeliness', '>= 3.0.0.beta'
+gem 'validates_timeliness'
 gem 'compass'
 gem 'compass-960-plugin'
 
 gem "mysql", :group => :production
 
 group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-  if RUBY_VERSION < '1.9'
-    gem "ruby-debug", ">= 0.10.3"
-  end
 	gem 'jquery-rails'
-  gem 'rspec-rails', '>=2.0.0.beta.11'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+end
+group :test do
+  gem "ruby-debug19"
 end
 
 group :console do
